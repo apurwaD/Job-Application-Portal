@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-JobApplication" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/JobApplication"/>
+        <property name="wsdl-JobApplication" location="xml-resources/web-service-references/JobApplication/wsdl/localhost_36885/JobPortal/JobApplication.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/JobApplication" destdir="${build.generated.dir}/jax-wsCache/JobApplication" wsdl="${wsdl-JobApplication}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:36885/JobPortal/JobApplication?WSDL" xnocompile="true" xendorsed="true">
+            <binding dir="xml-resources/web-service-references/JobApplication/bindings" includes="JobApplication_handler.xml"/>
+            <depends file="${wsdl-JobApplication}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/JobApplication"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/JobApplication">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy todir="${build.classes.dir}">
+            <fileset dir="${build.generated.dir}/jax-wsCache/JobApplication">
+                <include name="**/*.xml"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-JobApplication" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/JobApplication"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/controller"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-JobApplication"/>
+</project>

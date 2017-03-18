@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://controller/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://controller/">
+
+<xs:element name="applyJob" type="tns:applyJob"/>
+
+<xs:element name="applyJobResponse" type="tns:applyJobResponse"/>
+
+<xs:element name="getJobDetails" type="tns:getJobDetails"/>
+
+<xs:element name="getJobDetailsResponse" type="tns:getJobDetailsResponse"/>
+
+<xs:element name="getJobInfo" type="tns:getJobInfo"/>
+
+<xs:element name="getJobInfoResponse" type="tns:getJobInfoResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="applyJob">
+<xs:sequence>
+<xs:element name="jobId" type="xs:string" minOccurs="0"/>
+<xs:element name="candidateId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="applyJobResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getJobInfo">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getJobInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:jobProfile" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jobProfile">
+<xs:sequence>
+<xs:element name="deadline" type="tns:date" minOccurs="0"/>
+<xs:element name="degree" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="jobId" type="xs:string" minOccurs="0"/>
+<xs:element name="minGPA" type="xs:int"/>
+<xs:element name="postedOn" type="tns:date" minOccurs="0"/>
+<xs:element name="salary" type="xs:string" minOccurs="0"/>
+<xs:element name="skills" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="date">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getJobDetails">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="userID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getJobDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
